@@ -17,35 +17,35 @@ input.onGesture(Gesture.Shake, function () {
 
   // If random number is 0
   if (rockpaperscissors === 0) {
-  basic.showLeds(`
-. . . . .
-. # # # .
-. # # # .
-. # # # .
-. . . . .
-`)
+    basic.showLeds(`
+    . . . . .
+    . # # # .
+    . # # # .
+    . # # # .
+    . . . . .
+    `)
   }
 
   // If random number is 1
   if (rockpaperscissors === 1) {
-  basic.showLeds(`
-# # # # #
-# . . . #
-# . . . #
-# . . . #
-# # # # #
-`)
+    basic.showLeds(`
+    # # # # #
+    # . . . #
+    # . . . #
+    # . . . #
+    # # # # #
+    `)
   }
 
   // If random number is 2
   if (rockpaperscissors === 2) {
-  basic.showIcon(IconNames.Scissors)
+    basic.showIcon(IconNames.Scissors)
   }
 
   // pause and show you are ready again
   basic.pause(1000)
   basic.showIcon(IconNames.Happy)
-  })
+})
 
 input.onButtonPressed(Button.A, function () {
   score = score + 1
