@@ -6,6 +6,7 @@
 */
 
 let rockpaperscissors: number = -1
+let score: number = 0
 
 basic.clearScreen()
 basic.showIcon(IconNames.Happy)
@@ -25,8 +26,8 @@ basic.showLeds(`
 `)
 }
 
-    // If random number is 1
-    if (rockpaperscissors == 1) {
+  // If random number is 1
+  if (rockpaperscissors == 1) {
 basic.showLeds(`
 # # # # #
 # . . . #
@@ -36,12 +37,21 @@ basic.showLeds(`
 `)
     }
 
-    // If random number is 2
-    if (rockpaperscissors == 2) {
+  // If random number is 2
+  if (rockpaperscissors == 2) {
 basic.showIcon(IconNames.Scissors)
     }
 
   // pause and show you are ready again
   basic.pause(1000)
   basic.showIcon(IconNames.Happy)
+})
+
+input.onButtonPressed(Button.A, function() {
+  score = score + 1
+  basic.showIcon(IconNames.Yes)
+  basic.pause(2000)
+})
+input.onButtonPressed(Button.B, function() {
+  basic.showString('Score: ' + score.toString())
 })
