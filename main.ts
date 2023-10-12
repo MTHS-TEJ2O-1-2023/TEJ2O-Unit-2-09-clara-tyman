@@ -11,47 +11,47 @@ let score: number = 0
 basic.clearScreen()
 basic.showIcon(IconNames.Happy)
 
-input.onGesture(Gesture.Shake, function() {
+input.onGesture(Gesture.Shake, function () {
   rockpaperscissors = randint(0, 1)
   basic.clearScreen()
 
   // If random number is 0
-  if (rockpaperscissors == 0) {
-basic.showLeds(`
+  if (rockpaperscissors === 0) {
+  basic.showLeds(`
 . . . . .
 . # # # .
 . # # # .
 . # # # .
 . . . . .
 `)
-}
+  }
 
   // If random number is 1
-  if (rockpaperscissors == 1) {
-basic.showLeds(`
+  if (rockpaperscissors === 1) {
+  basic.showLeds(`
 # # # # #
 # . . . #
 # . . . #
 # . . . #
 # # # # #
 `)
-    }
+  }
 
   // If random number is 2
-  if (rockpaperscissors == 2) {
-basic.showIcon(IconNames.Scissors)
-    }
+  if (rockpaperscissors === 2) {
+  basic.showIcon(IconNames.Scissors)
+  }
 
   // pause and show you are ready again
   basic.pause(1000)
   basic.showIcon(IconNames.Happy)
-})
+  })
 
-input.onButtonPressed(Button.A, function() {
+input.onButtonPressed(Button.A, function () {
   score = score + 1
   basic.showIcon(IconNames.Yes)
   basic.pause(2000)
 })
-input.onButtonPressed(Button.B, function() {
+input.onButtonPressed(Button.B, function () {
   basic.showString('Score: ' + score.toString())
 })
